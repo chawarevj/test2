@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form>
+        <input id="name" type="text" placeholder="Enter Name">
+    <input id="roll" type="number" placeholder="Enter Roll No">
+   <button id="submit" >Submit</button>
+    </form>
+    <div id="container"></div>
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", addStudent);
+    var StudentData = [];
+    function addStudent(){
+        event.preventDefault();
+        var obj = {
+            name :document.querySelector("#name").value,
+         
+            roll :document.querySelector("#roll").value,
+        };
+        //console.log(obj);
+        StudentData.push(obj);
+        //console.log(StudentData);
+       displayStudents(StudentData);
+    }
+     function displayStudents(StudentData){
+console.log(StudentData);
+document.querySelector("#container").innerText = "";
+ StudentData.forEach(function(elem) {
+    var box = document.createElement("div");
+    var name = document.createElement("p");
+    name.innerText = elem.name;
+    var roll = document.createElement("p");
+    roll.innerText = elem.roll;
+    box.append(name , roll);
+    document.querySelector("#container").append(box);
+ });
+     }
+
+</script>
