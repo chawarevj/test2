@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a1" type="number" placeholder="Enter value a" value="">
+    <input id="a2" type="number" placeholder="Enter value b" value="">
+    <button id="b1">Check Product</button>
+    <button id="b2">Check Exponent</button>
+    <p></p>
+</body>
+</html>
+<script>
+    document.querySelector("#b1").addEventListener("click" , productab)
+    function productab() {
+        var a = document.querySelector("#a1").value;
+        var b = document.querySelector("#a2").value;
+        alert(a*b);
+    }
+    document.querySelector("#b2").addEventListener("click" , exponentab)
+    function exponentab(){
+        var a = document.querySelector("#a1").value;
+        var b = document.querySelector("#a2").value; 
+        var pro = 1; 
+        for(var i = 0; i < b; i++){
+            pro = pro*a;}
+            document.querySelector("p").innerText = pro;
+        
+    }
+</script>
